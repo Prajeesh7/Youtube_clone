@@ -6,6 +6,7 @@ import Feed from './Components/Feed';
 import VideoDetail from './Components/VideoDetail';
 import ChennalDetail from './Components/ChennalDetail';
 import SearchFeed from './Components/SearchFeed';
+import './App.css';
 
 
 function App() {
