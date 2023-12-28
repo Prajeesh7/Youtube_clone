@@ -15,13 +15,13 @@ function App() {
     <div>
       <BrowserRouter>
         <Box sx={{ backgroundColor: '#000' }}>
-        <Navbar/>
-        <Routes>
-          <Route path='/' exact element = {<Feed/>}/>
-          <Route path='/video/:id' element = {<VideoDetail/>}/>
-          <Route path='/chennal/:id' element = {<ChennalDetail/>}/>
-          <Route path='/search/:searchTerm' element = {<SearchFeed/>}/>
-        </Routes>
+          <Navbar />
+          <Routes>
+            <Route path='/' exact element={<Feed />} />
+            <Route path='/video/:id' element={<VideoDetail />} />
+            <Route path='/chennal/:id' element={<ChennalDetail />} />
+            <Route path='/search/:searchTerm' element={<SearchFeed />} />
+          </Routes>
         </Box>
       </BrowserRouter>
     </div>
