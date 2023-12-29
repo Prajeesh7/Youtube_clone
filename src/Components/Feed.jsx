@@ -11,12 +11,14 @@ const Feed = () => {
 const [selectedCategory, setSelectedCategory] = useState('New');
 const [videos, setVideos] = useState([]);
 
+ //console.log(selectedCategory);
+
   useEffect(() => {
   
-    fetchAPI(`search?part=snippet&q=${selectedCategory}`).then((data)=>{
-      setVideos(data.item)
+    fetchAPI(`search?part=snippet&q=${selectedCategory}`).then((res)=>{
+      setVideos(res.items)
     })
-
+ 
   }, [selectedCategory])
 
   return (
