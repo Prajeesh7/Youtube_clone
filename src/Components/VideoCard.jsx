@@ -18,6 +18,7 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
                 sx={{ width: 258, height: 180 }}
                 alt={ snippet?.title } 
                 />
+                <CardContent sx={{ backgroundColor: '#1e1e1e', height: '106px'}} />
             </Link>
         </Card>
     )
