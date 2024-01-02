@@ -6,7 +6,7 @@ import ChennalCard from './ChennalCard'
 
 const Videos = ({ videos }) => {
 
-  //console.log( videos );
+console.log( videos );
 
 
   return (
@@ -17,7 +17,7 @@ const Videos = ({ videos }) => {
 
         <Box key={idx} >
           { item.id.videoId && <VideoCard video={item} />}
-          { item.id.channelId && <ChennalCard channelDetail={ item }/> }
+          
         </Box>
 
       ))}
