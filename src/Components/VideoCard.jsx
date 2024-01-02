@@ -1,19 +1,28 @@
 import React from 'react'
-import { Typography,Card,CardContent,CardMedia } from '@mui/material'
+import { Link } from 'react-router-dom'
+import { Typography, Card, CardContent, CardMedia } from '@mui/material'
 import { CheckCircle, ImageOutlined } from '@mui/icons-material'
 
-import { demoChannelTitle,demoVideoUrl,demoVideoTitle,demoChannelUrl,demoThumbnailUrl } from '../Utils/constants'
+import { demoChannelTitle, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoThumbnailUrl } from '../Utils/constants'
 
 
 
-const VideoCard = ( { video:{id: {videoId},snippet } } ) => {
-    console.log(videoId,snippet)
-  
+const VideoCard = ({ video: { id: { videoId }, snippet } }) => {
+    console.log(videoId, snippet)
+
     return (
-    <div>
-      VideoCard
-    </div>
-  )
+        <Card>
+            <Link to={ videoId ? `/video/${videoId}` : demoVideoUrl }>
+                <CardMedia 
+                image={ snippet?. thumbnails?. high?. url} 
+                sx={{ width: 258, height: 180 }}
+                alt={ snippet?.title } 
+                />
+            </Link>
+        </Card>
+    )
 }
 
 export default VideoCard
+
+// ? -> it means if exist do the task or not 
