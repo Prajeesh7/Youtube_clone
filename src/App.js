@@ -4,7 +4,7 @@ import { Box } from '@mui/material';
 import Navbar from './Components/Navbar';
 import Feed from './Components/Feed';
 import VideoDetail from './Components/VideoDetail';
-import ChennalDetail from './Components/ChennalDetail';
+import ChannelDetail from './Components/ChannelDetail'
 import SearchFeed from './Components/SearchFeed';
 import './App.css';
 
@@ -19,7 +19,7 @@ function App() {
           <Routes>
             <Route path='/' exact element={<Feed />} />
             <Route path='/video/:id' element={<VideoDetail />} />
-            <Route path='/chennal/:id' element={<ChennalDetail />} />
+            <Route path='/channel/:id' element={<ChannelDetail />} />
             <Route path='/search/:searchTerm' element={<SearchFeed />} />
           </Routes>
         </Box>

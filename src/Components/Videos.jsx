@@ -1,12 +1,12 @@
 import React from 'react'
 import { Box, Stack } from '@mui/material'
 import VideoCard from './VideoCard'
-import ChennalCard from './ChennalCard'
+import ChannelCard from './ChannelCard'
 
 
 const Videos = ({ videos }) => {
 
-console.log( videos );
+//console.log( videos );
 
 
   return (
@@ -17,7 +17,7 @@ console.log( videos );
 
         <Box key={idx} >
           { item.id.videoId && <VideoCard video={item} />}
-          { item.id.channelId && <ChennalCard channelDetail={ item }/> }
+          { item.id.channelId && <ChannelCard channelDetail={ item }/> }
         </Box>
 
       ))}

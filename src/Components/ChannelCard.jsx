@@ -6,7 +6,7 @@ import { demoProfilePicture,demoChannelTitle } from '../Utils/constants'
 
 
 
-const ChennalCard = ({ channelDetail }) => {
+const ChannelCard = ({ channelDetail }) => {
 
     return (
         <Box
@@ -18,10 +18,11 @@ const ChennalCard = ({ channelDetail }) => {
                 alignItems: 'center',
                 width: { xs: '356px', md: '320px' },
                 height: '326px',
-                margin: 'auto'
+                margin: 'auto',
+                mr:-2
             }}
         >
-            <Link to={`/channel/${channelDetail?.id?.channalId}`} >
+            <Link to={`/channel/${ channelDetail?.id?.channelId }`} >
                 <CardContent sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -44,7 +45,7 @@ const ChennalCard = ({ channelDetail }) => {
                     </Typography>
 
                     <Typography>
-                        {channelDetail?. statistics?. subscriberCount && (
+                        { channelDetail?. statistics?. subscriberCount && (
                             <Typography>
                                 { parseInt(channelDetail?. statistics?. subscriberCount).toLocaleString()}
                                 Subscribers
@@ -59,4 +60,4 @@ const ChennalCard = ({ channelDetail }) => {
     )
 }
 
-export default ChennalCard
+export default ChannelCard
