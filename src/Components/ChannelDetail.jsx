@@ -1,6 +1,6 @@
 import React,{ useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { videos } from './Videos'
+import Videos from './Videos'
 import { fetchAPI } from '../Utils/fetchAPI'
 import { Box } from '@mui/material'
 import ChannelCard from './ChannelCard'
@@ -32,6 +32,7 @@ const ChannelDetail = () => {
   
   return (
     <Box minHeight='95vh'>
+
       <Box>
         <div style={{
           background:'radial-gradient(circle, rgba(255,92,188,1) 0%, rgba(0,250,201,1) 100%)',
@@ -39,7 +40,13 @@ const ChannelDetail = () => {
           height: '300px'
         }}>
         </div>
-        <ChannelCard channelDetail={ channelDetail } marginTop= {{marginTop:'-95px'}} />
+        <ChannelCard channelDetail={ channelDetail } marginTop= {{marginTop:'-110px'}} />
+      </Box>
+
+      <Box display='flex' p='2'>
+        <Box sx={{ mr:{ sm:'100px' }}} >
+        <Videos videos={videos} />
+        </Box>
       </Box>
 
     </Box>
