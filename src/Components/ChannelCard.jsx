@@ -19,7 +19,7 @@ const ChannelCard = ({ channelDetail }) => {
                 width: { xs: '356px', md: '320px' },
                 height: '326px',
                 margin: 'auto',
-                mr:-2
+                marginTop: '-93px'
             }}
         >
             <Link to={`/channel/${ channelDetail?.id?.channelId }`} >
@@ -38,7 +38,7 @@ const ChannelCard = ({ channelDetail }) => {
 
                     <Typography variant='h6' fontWeight='bold' color='#FFF' >
 
-                    { channelDetail?. snippet?. channelTitle || demoChannelTitle }
+                    { channelDetail?. snippet?. title || demoChannelTitle }
 
                     <CheckCircle sx={{ fontSize: 14, color: 'grey', ml: '5px'}} />
 
@@ -48,7 +48,7 @@ const ChannelCard = ({ channelDetail }) => {
                         { channelDetail?. statistics?. subscriberCount && (
                             <Typography>
                                 { parseInt(channelDetail?. statistics?. subscriberCount).toLocaleString()}
-                                Subscribers
+                                <span> Subscribers</span> 
                             </Typography>
                         )}
                     </Typography>
