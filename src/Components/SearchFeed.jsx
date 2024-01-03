@@ -18,7 +18,7 @@ const SearchFeed = () => {
         setVideos(result.items)
     })
 
- }, [])
+ }, [searchTerm])
 
     return (
     <Box 
