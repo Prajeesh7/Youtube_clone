@@ -6,7 +6,7 @@ import { demoProfilePicture,demoChannelTitle } from '../Utils/constants'
 
 
 
-const ChannelCard = ({ channelDetail }) => {
+const ChannelCard = ({ channelDetail,marginTop }) => {
 
     return (
         <Box
@@ -19,7 +19,7 @@ const ChannelCard = ({ channelDetail }) => {
                 width: { xs: '356px', md: '320px' },
                 height: '326px',
                 margin: 'auto',
-                marginTop: '-93px'
+                marginTop
             }}
         >
             <Link to={`/channel/${ channelDetail?.id?.channelId }`} >
@@ -61,3 +61,8 @@ const ChannelCard = ({ channelDetail }) => {
 }
 
 export default ChannelCard
+
+
+
+// Whenever we use the same element name in both sides simply we can use 
+// one time that element 

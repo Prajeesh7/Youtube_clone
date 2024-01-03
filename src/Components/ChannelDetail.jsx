@@ -14,7 +14,7 @@ const ChannelDetail = () => {
 
   const { id } = useParams();
 
-  console.log( channelDetail)
+  //console.log( channelDetail,videos)
 
   useEffect(() => {
 
@@ -39,7 +39,7 @@ const ChannelDetail = () => {
           height: '300px'
         }}>
         </div>
-        <ChannelCard channelDetail={ channelDetail } />
+        <ChannelCard channelDetail={ channelDetail } marginTop= {{marginTop:'-95px'}} />
       </Box>
 
     </Box>
