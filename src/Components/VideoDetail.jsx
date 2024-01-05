@@ -32,12 +32,12 @@ function VideoDetail() {
     <Box minHeight='95vh'>
       <Stack direction={{ xs: 'column', md: 'row' }} >
         <Box flex={1}>
-          <Box sx={{ width: '100%', position: 'sticky', top: '86px'}} >
+          <Box sx={{ width: '100%', position: 'sticky', top: '86px' }} >
             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} 
             className='react-player' controls />
           
           <Typography color='#fff' variant='h5' fontWeight='bold' p={2} >
-            { snippet.title }
+            { snippet?. title }
           </Typography>
 
           <Stack direction='row' justifyContent='space-between' sx={{
@@ -46,10 +46,22 @@ function VideoDetail() {
             <Link to={`/channel/${statistics?.channelId}`} >
 
             <Typography color='#FFF' variant={{ sm:'subtitle1', md:'h6' }} >
-              { snippet.channelTitle }
+              { snippet?. channelTitle }
+              <CheckCircle sx={{ fontSize:'12px', color:'gray', ml:'5px' }} />
             </Typography>
             
             </Link>
+
+            <Stack direction='row' gap='20px'alignContent='center' >
+              <Typography variant='body1' sx={{ opacity:'0.7' }} >
+                { parseInt(statistics?. viewCount).toLocaleString() }
+                <span>  Views </span> 
+              </Typography>
+              <Typography variant='body1' sx={{ opacity:'0.7' }} >
+                { parseInt(statistics?. likeCount).toLocaleString() }
+                <span>  Likes </span> 
+              </Typography>
+            </Stack>
 
           </Stack>
 
