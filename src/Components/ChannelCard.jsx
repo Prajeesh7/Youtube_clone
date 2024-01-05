@@ -1,12 +1,12 @@
 import React from 'react'
-import { Box, CardMedia, Typography,CardContent } from '@mui/material'
+import { Box, CardMedia, Typography, CardContent } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { CheckCircle } from '@mui/icons-material'
-import { demoProfilePicture,demoChannelTitle } from '../Utils/constants'
+import { demoProfilePicture, demoChannelTitle } from '../Utils/constants'
 
 
 
-const ChannelCard = ({ channelDetail,marginTop }) => {
+const ChannelCard = ({ channelDetail, marginTop }) => {
 
     return (
         <Box
@@ -22,7 +22,7 @@ const ChannelCard = ({ channelDetail,marginTop }) => {
                 marginTop
             }}
         >
-            <Link to={`/channel/${ channelDetail?.id?.channelId }`} >
+            <Link to={`/channel/${channelDetail?.id?.channelId}`} >
                 <CardContent sx={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -30,25 +30,25 @@ const ChannelCard = ({ channelDetail,marginTop }) => {
                     textAlign: 'center',
                     color: '#FFF '
                 }} >
-                    <CardMedia 
-                    image={ channelDetail?. snippet?. thumbnails?. high?. url || demoProfilePicture }
-                    alt= { channelDetail?. snippet?. title}
-                    sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
+                    <CardMedia
+                        image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture}
+                        alt={channelDetail?.snippet?.title}
+                        sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
                     />
 
                     <Typography variant='h6' fontWeight='bold' color='#FFF' >
 
-                    { channelDetail?. snippet?. title || demoChannelTitle }
+                        {channelDetail?.snippet?.title || demoChannelTitle}
 
-                    <CheckCircle sx={{ fontSize: 14, color: 'grey', ml: '5px'}} />
+                        <CheckCircle sx={{ fontSize: 14, color: 'grey', ml: '5px' }} />
 
                     </Typography>
 
                     <Typography>
-                        { channelDetail?. statistics?. subscriberCount && (
+                        {channelDetail?.statistics?.subscriberCount && (
                             <Typography>
-                                { parseInt(channelDetail?. statistics?. subscriberCount).toLocaleString()}
-                                <span> Subscribers</span> 
+                                {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString()}
+                                <span> Subscribers</span>
                             </Typography>
                         )}
                     </Typography>
@@ -64,5 +64,5 @@ export default ChannelCard
 
 
 
-// Whenever we use the same element name in both sides simply we can use 
+// Whenever we use the same element name in both sides simply we can use
 // one time that element 

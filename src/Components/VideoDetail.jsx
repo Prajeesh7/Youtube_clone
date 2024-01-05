@@ -15,17 +15,17 @@ function VideoDetail() {
 
   useEffect(() => {
 
-    fetchAPI(`videos?part=snippet,statistics&id=${id}`).then((data)=>{
+    fetchAPI(`videos?part=snippet,statistics&id=${id}`).then((data) => {
       setVideoDetails(data.items[0])
     })
-  
+
   }, [id])
 
-    console.log(videoDetails)
-  
-  if ( ! videoDetails ?. snippet ) return 'Loading...';
+  console.log(videoDetails)
 
-  const { snippet,statistics } = videoDetails;
+  if (!videoDetails?.snippet) return 'Loading...';
+
+  const { snippet, statistics } = videoDetails;
 
 
   return (
@@ -33,37 +33,38 @@ function VideoDetail() {
       <Stack direction={{ xs: 'column', md: 'row' }} >
         <Box flex={1}>
           <Box sx={{ width: '100%', position: 'sticky', top: '86px' }} >
-            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} 
-            className='react-player' controls />
-          
-          <Typography color='#fff' variant='h5' fontWeight='bold' p={2} >
-            { snippet?. title }
-          </Typography>
+            <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`}
+              className='react-player' controls />
 
-          <Stack direction='row' justifyContent='space-between' sx={{
-            color: '#fff'}} py={1} px={2} >
-
-            <Link to={`/channel/${snippet?.channelId}`} >
-
-            <Typography color='#FFF' variant={{ sm:'subtitle1', md:'h6' }} >
-              { snippet?. channelTitle }
-              <CheckCircle sx={{ fontSize:'12px', color:'gray', ml:'5px' }} />
+            <Typography color='#fff' variant='h5' fontWeight='bold' p={2} >
+              {snippet?.title}
             </Typography>
-            
-            </Link>
 
-            <Stack direction='row' gap='20px'alignContent='center' >
-              <Typography variant='body1' sx={{ opacity:'0.7' }} >
-                { parseInt(statistics?. viewCount).toLocaleString() }
-                <span>  Views </span> 
-              </Typography>
-              <Typography variant='body1' sx={{ opacity:'0.7' }} >
-                { parseInt(statistics?. likeCount).toLocaleString() }
-                <span>  Likes </span> 
-              </Typography>
+            <Stack direction='row' justifyContent='space-between' sx={{
+              color: '#fff'
+            }} py={1} px={2} >
+
+              <Link to={`/channel/${snippet?.channelId}`} >
+
+                <Typography color='#FFF' variant={{ sm: 'subtitle1', md: 'h6' }} >
+                  {snippet?.channelTitle}
+                  <CheckCircle sx={{ fontSize: '12px', color: 'gray', ml: '5px' }} />
+                </Typography>
+
+              </Link>
+
+              <Stack direction='row' gap='20px' alignContent='center' >
+                <Typography variant='body1' sx={{ opacity: '0.7' }} >
+                  {parseInt(statistics?.viewCount).toLocaleString()}
+                  <span>  Views </span>
+                </Typography>
+                <Typography variant='body1' sx={{ opacity: '0.7' }} >
+                  {parseInt(statistics?.likeCount).toLocaleString()}
+                  <span>  Likes </span>
+                </Typography>
+              </Stack>
+
             </Stack>
-
-          </Stack>
 
           </Box>
         </Box>

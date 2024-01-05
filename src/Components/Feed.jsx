@@ -8,17 +8,17 @@ import { fetchAPI } from '../Utils/fetchAPI'
 
 const Feed = () => {
 
-const [selectedCategory, setSelectedCategory] = useState('New');
-const [videos, setVideos] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState('New');
+  const [videos, setVideos] = useState([]);
 
- //console.log(selectedCategory);
+  //console.log(selectedCategory);
 
   useEffect(() => {
-  
-    fetchAPI(`search?part=snippet&q=${selectedCategory}`).then((res)=>{
+
+    fetchAPI(`search?part=snippet&q=${selectedCategory}`).then((res) => {
       setVideos(res.items)
     })
- 
+
   }, [selectedCategory])
 
   return (
@@ -26,17 +26,17 @@ const [videos, setVideos] = useState([]);
       sx={{ flexDirection: { sx: 'column', md: 'row' } }}
     >
       <Box sx={{ height: { sx: 'auto', md: '92vh' }, borderRadius: '1px solid #3d3d3d', px: { sx: 0, md: 2 } }} >
-       
+
         <SideBar
-          selectedCategory = { selectedCategory } 
-          setSelectedCategory = { setSelectedCategory }
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
         />
 
-        <Typography 
-        className='copyright' 
-        variant='body2' 
-        sx={{ mt: 1.5, color: ' #fff' }} >
-        Copyright 2023 reserved
+        <Typography
+          className='copyright'
+          variant='body2'
+          sx={{ mt: 1.5, color: ' #fff' }} >
+          Copyright 2023 reserved
         </Typography>
 
       </Box>
@@ -51,10 +51,10 @@ const [videos, setVideos] = useState([]);
             color: 'white'
           }}
         >
-          { selectedCategory } <span style={{ color: '#F31503' }}>Videos</span>
+          {selectedCategory} <span style={{ color: '#F31503' }}>Videos</span>
         </Typography>
 
-        <Videos videos={ videos } />
+        <Videos videos={videos} />
       </Box>
     </Stack>
   )

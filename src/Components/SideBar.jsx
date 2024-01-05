@@ -18,7 +18,7 @@ const SideBar = ({ selectedCategory, setSelectedCategory }) => (
             categories.map((category) => (
                 <button
                     className='category-btn'
-                    onClick={()=>{
+                    onClick={() => {
                         setSelectedCategory(category.name)
                     }}
                     style={{
