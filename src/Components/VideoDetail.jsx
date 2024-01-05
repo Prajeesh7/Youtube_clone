@@ -43,7 +43,7 @@ function VideoDetail() {
           <Stack direction='row' justifyContent='space-between' sx={{
             color: '#fff'}} py={1} px={2} >
 
-            <Link to={`/channel/${statistics?.channelId}`} >
+            <Link to={`/channel/${snippet?.channelId}`} >
 
             <Typography color='#FFF' variant={{ sm:'subtitle1', md:'h6' }} >
               { snippet?. channelTitle }
