@@ -2,7 +2,7 @@
   "name": "project_youtube_video_player",
   "version": "1.0.0",
   "private": true,
-  "homepage": "http://Prajeesh7.github.io/Youtube_clone",
+  "homepage": "https://Prajeesh7.github.io/Youtube_clone",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",

@@ -11,7 +11,7 @@ const Feed = () => {
   const [selectedCategory, setSelectedCategory] = useState('New');
   const [videos, setVideos] = useState([]);
 
-  //console.log(selectedCategory);
+  console.log(selectedCategory);
 
   useEffect(() => {
 
